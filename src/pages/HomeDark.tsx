@@ -20,17 +20,17 @@ const HomeDark = () => {
     setIsSuccessOpen(true);
   };
 
-  const handleWaitlistClick = (planName?: string) => {
-    if (planName) {
-      setSelectedPlan({ name: planName, price: '' });
-    }
-    setIsWaitlistOpen(true);
-  };
+//   const handleWaitlistClick = (planName?: string) => {
+//     if (planName) {
+//       setSelectedPlan({ name: planName, price: '' });
+//     }
+//     setIsWaitlistOpen(true);
+//   };
 
-  const handleSponsorClick = (planName: string) => {
-    setSelectedPlan({ name: planName, price: '' });
-    setIsSponsorOpen(true);
-  };
+//   const handleSponsorClick = (planName: string) => {
+//     setSelectedPlan({ name: planName, price: '' });
+//     setIsSponsorOpen(true);
+//   };
 
   return (
     <div className="min-h-screen bg-background">
