@@ -3,7 +3,7 @@ import FeatureCardDark from './FeatureCardDark';
 // import FeatureCardLight from './FeatureCardLight';
 import { Building2, FileText, Briefcase, Users } from 'lucide-react';
 
-import virtualOffice from '@/assets/virtual-office.png';
+import virtualOffice from '../assets/virtual-office.jpg';
 import recommendationLetter from '@/assets/recommendation-letter.png';
 import livePortfolio from '@/assets/live-portfolio.jpg';
 import teamMeeting from '@/assets/team-meeting.jpg';
