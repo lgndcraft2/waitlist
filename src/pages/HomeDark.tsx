@@ -14,7 +14,7 @@ const HomeDark = () => {
   const [isWaitlistOpen, setIsWaitlistOpen] = useState(false);
   const [isSponsorOpen, setIsSponsorOpen] = useState(false);
   const [isSuccessOpen, setIsSuccessOpen] = useState(false);
-  const [selectedPlan, setSelectedPlan] = useState({ name: '', price: '' });
+  const [selectedPlan] = useState({ name: '', price: '' });
 
   const handleWaitlistSuccess = () => {
     setIsSuccessOpen(true);
