@@ -4,7 +4,7 @@ import { X, Mail, User, Copy, Share2, Check } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { useToast } from '@/hooks/use-toast';
+import { useToast } from '../hooks/use-toast';
 
 interface SponsorModalProps {
   isOpen: boolean;
