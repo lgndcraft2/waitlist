@@ -7,7 +7,7 @@ interface ChatSectionDarkProps {
   onTrialsExhausted?: () => void;
 }
 
-const ChatSectionDark = ({ onChatStart, onTrialsExhausted }: ChatSectionDarkProps) => {
+const ChatSectionDark = ({ onTrialsExhausted }: ChatSectionDarkProps) => {
   return (
     <section className="section-darker py-16 md:py-24">
       <div className="container mx-auto px-4">
