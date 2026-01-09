@@ -34,7 +34,7 @@ const reviews = [
   {
     name: 'Blessing, Port Harcourt.',
     location: 'Port Harcourt',
-    content: "The AI doesn't sugarcoat. It told me my portfolio was 'generic' and gave me 3 actionable fixes. Worth every naira.",
+    content: "Tolu doesn't sugarcoat. She told me my portfolio was 'generic' and gave me 3 actionable fixes. Worth every naira.",
     avatar: avatarBlessing,
   },
   {
@@ -42,12 +42,6 @@ const reviews = [
     location: 'Enugu',
     content: "Finally, a platform that treats you like a professional, not a student. The strict deadlines changed my work ethic completely.",
     avatar: avatarEmeka,
-  },
-  {
-    name: 'Fatima, Kano.',
-    location: 'Kano',
-    content: "I got my recommendation letter 2 days after graduation. Used it for my visa application. Still can't believe this costs only ₦15k/month.",
-    avatar: avatarFatima,
   },
 ];
 
