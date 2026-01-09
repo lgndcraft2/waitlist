@@ -2,7 +2,7 @@ import { useState } from 'react';
 import NavbarDark from '../components/NavBarDark';
 import HeroSectionDark from '../components/HeroSectionDark';
 import ArsenalSection from '../components/ArsenalSection';
-// import ChatSectionDark from '@/components/ChatSectionDark';
+import ChatSectionDark from '../components/ChatSectionDark';
 // import PricingSection from '@/components/PricingSection';
 // import CTASectionDark from '@/components/CTASectionDark';
 // import FooterDark from '@/components/FooterDark';
@@ -44,10 +44,10 @@ const HomeDark = () => {
       />
       <ArsenalSection variant="dark" />
 
-      {/* <div id="chat">
+      <div id="chat">
         <ChatSectionDark onTrialsExhausted={() => setIsWaitlistOpen(true)} />
       </div>
-      <PricingSection 
+      {/* <PricingSection 
         variant="dark" 
         onPayClick={handleWaitlistClick}
         onSponsorClick={handleSponsorClick}
