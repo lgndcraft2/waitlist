@@ -17,14 +17,14 @@ const ArsenalSection = ({ variant = 'dark' }: ArsenalSectionProps) => {
     {
       icon: <Building2 className="w-8 h-8" />,
       title: 'The Virtual Office',
-      description: 'Access to the WDC HQ Dashboard. Daily tasks, strict deadlines, and an AI boss who fires you if you slack.',
+      description: 'Access to the WDC HQ Dashboard. Daily tasks, strict deadlines, and an a boss who fires you if you slack.',
       image: virtualOffice,
       accentColor: 'teal' as const,
     },
     {
       icon: <FileText className="w-8 h-8" />,
       title: 'Recommendation Letter',
-      description: 'A verified, signed letter of recommendation generated automatically upon graduation. Use it for Visa apps.',
+      description: 'A verified, signed letter of recommendation generated automatically upon graduation. Use it for Visa applications.',
       image: recommendationLetter,
       accentColor: 'coral' as const,
     },
@@ -38,7 +38,7 @@ const ArsenalSection = ({ variant = 'dark' }: ArsenalSectionProps) => {
     {
       icon: <Users className="w-8 h-8" />,
       title: 'The Alumni Network',
-      description: 'Join the "Japa Squad". Exclusive job postings from foreign startups looking for WDC grads.',
+      description: 'Join the "Japa Squad". Exclusive job postings from foreign startups looking for WDC graduates.',
       image: teamMeeting,
       accentColor: 'yellow' as const,
     },
