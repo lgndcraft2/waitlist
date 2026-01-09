@@ -6,9 +6,9 @@ import HeroSectionDark from '../components/HeroSectionDark';
 // import PricingSection from '@/components/PricingSection';
 // import CTASectionDark from '@/components/CTASectionDark';
 // import FooterDark from '@/components/FooterDark';
-// import WaitlistModal from '@/components/WaitlistModal';
-// import SponsorModal from '@/components/SponsorModal';
-// import SuccessModal from '@/components/SuccessModal';
+import WaitlistModal from '../components/WaitlistModal';
+import SponsorModal from '@/components/SponsorModal';
+import SuccessModal from '@/components/SuccessModal';
 
 const HomeDark = () => {
   const [isWaitlistOpen, setIsWaitlistOpen] = useState(false);
@@ -42,7 +42,7 @@ const HomeDark = () => {
         onSecureSpotClick={() => setIsWaitlistOpen(true)}
         onMentorPayClick={() => setIsSponsorOpen(true)}
       />
-      <ArsenalSection variant="dark" />
+      {/* <ArsenalSection variant="dark" />
       <div id="chat">
         <ChatSectionDark onTrialsExhausted={() => setIsWaitlistOpen(true)} />
       </div>
@@ -52,7 +52,7 @@ const HomeDark = () => {
         onSponsorClick={handleSponsorClick}
       />
       <CTASectionDark onSecureSpotClick={() => setIsWaitlistOpen(true)} />
-      <FooterDark />
+      <FooterDark /> */}
 
       <WaitlistModal 
         isOpen={isWaitlistOpen} 
