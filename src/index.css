@@ -1,68 +1,335 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
+@layer base {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    /* WDC Labs Dark Theme (default) */
+    --background: 213 37% 10%;
+    --foreground: 210 40% 98%;
+
+    --card: 213 40% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 213 40% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 186 100% 50%;
+    --primary-foreground: 213 37% 10%;
+
+    --secondary: 213 30% 18%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 213 30% 20%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 186 100% 50%;
+    --accent-foreground: 213 37% 10%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 213 30% 25%;
+    --input: 213 30% 20%;
+    --ring: 186 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom colors */
+    --coral: 16 100% 60%;
+    --coral-dark: 16 100% 50%;
+    --teal: 186 100% 50%;
+    --teal-dark: 186 100% 40%;
+    --yellow: 45 100% 51%;
+    --warning-red: 0 84% 50%;
+    --navy-deep: 213 50% 8%;
+    --navy-light: 213 30% 25%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(213, 50%, 8%) 0%, hsl(213, 40%, 15%) 50%, hsl(213, 35%, 20%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(213, 40%, 14%) 0%, hsl(213, 40%, 10%) 100%);
+    --gradient-button-primary: linear-gradient(135deg, hsl(186, 100%, 45%) 0%, hsl(186, 100%, 50%) 100%);
+    --gradient-button-coral: linear-gradient(135deg, hsl(16, 100%, 55%) 0%, hsl(16, 100%, 60%) 100%);
+    
+    --sidebar-background: 213 40% 12%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 186 100% 50%;
+    --sidebar-primary-foreground: 213 37% 10%;
+    --sidebar-accent: 213 30% 18%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 213 30% 25%;
+    --sidebar-ring: 186 100% 50%;
   }
-  a:hover {
-    color: #747bff;
+
+  .light-theme {
+    --background: 210 20% 98%;
+    --foreground: 213 37% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 213 37% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 213 37% 15%;
+
+    --primary: 213 50% 25%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 213 37% 15%;
+
+    --muted: 210 20% 94%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 16 100% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 213 50% 25%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(210, 20%, 98%) 0%, hsl(210, 20%, 95%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsl(210, 20%, 98%) 100%);
   }
-  button {
-    background-color: #f9f9f9;
+}
+
+@layer base {
+  * {
+    @apply border-border;
   }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+@layer components {
+  .btn-primary-gradient {
+    @apply relative overflow-hidden font-semibold transition-all duration-300;
+    background: linear-gradient(135deg, hsl(186, 100%, 45%) 0%, hsl(186, 100%, 50%) 100%);
+    box-shadow: 0 4px 15px -3px hsla(186, 100%, 50%, 0.4);
+  }
+
+  .btn-primary-gradient:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px -3px hsla(186, 100%, 50%, 0.5);
+  }
+
+  .btn-coral-gradient {
+    @apply relative overflow-hidden font-semibold transition-all duration-300;
+    background: linear-gradient(135deg, hsl(16, 100%, 55%) 0%, hsl(16, 100%, 60%) 100%);
+    box-shadow: 0 4px 15px -3px hsla(16, 100%, 60%, 0.4);
+  }
+
+  .btn-coral-gradient:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px -3px hsla(16, 100%, 60%, 0.5);
+  }
+
+  .btn-outline-light {
+    @apply border-2 border-foreground/80 bg-transparent font-semibold transition-all duration-300;
+  }
+
+  .btn-outline-light:hover {
+    @apply bg-foreground/10;
+  }
+
+  .card-gradient {
+    background: linear-gradient(180deg, hsl(213, 40%, 14%) 0%, hsl(213, 40%, 10%) 100%);
+    border: 1px solid hsl(213, 30%, 25%);
+  }
+
+  .card-gradient-light {
+    @apply bg-card border border-border;
+    box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.1);
+  }
+
+  .warning-banner {
+    background: linear-gradient(90deg, hsl(0, 84%, 50%) 0%, hsl(16, 100%, 50%) 100%);
+  }
+
+  .countdown-box {
+    @apply flex flex-col items-center justify-center rounded-lg font-bold;
+    background: hsl(213, 40%, 15%);
+  }
+
+  .countdown-box-accent {
+    background: linear-gradient(135deg, hsl(186, 100%, 45%) 0%, hsl(186, 100%, 50%) 100%);
+  }
+
+  .pricing-card {
+    @apply relative overflow-hidden transition-all duration-300;
+    background: linear-gradient(180deg, hsl(213, 40%, 14%) 0%, hsl(213, 40%, 10%) 100%);
+    border: 1px solid hsl(213, 30%, 25%);
+  }
+
+  .pricing-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -15px hsla(186, 100%, 50%, 0.2);
+  }
+
+  .pricing-card-featured {
+    border-color: hsl(186, 100%, 50%);
+    box-shadow: 0 0 30px -10px hsla(186, 100%, 50%, 0.3);
+  }
+
+  .pricing-card-light {
+    @apply bg-card border border-border transition-all duration-300;
+  }
+
+  .pricing-card-light:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.15);
+  }
+
+  .pricing-card-featured-light {
+    border: 2px solid hsl(16, 100%, 60%);
+  }
+
+  .chat-interface {
+    background: linear-gradient(180deg, hsl(213, 40%, 12%) 0%, hsl(213, 40%, 10%) 100%);
+    border: 1px solid hsl(213, 30%, 25%);
+  }
+
+  .chat-bubble-ai {
+    @apply rounded-2xl rounded-tl-sm p-4;
+    background: hsl(213, 40%, 15%);
+  }
+
+  .chat-bubble-user {
+    @apply rounded-2xl rounded-tr-sm p-4;
+    background: linear-gradient(135deg, hsl(213, 50%, 25%) 0%, hsl(213, 45%, 30%) 100%);
+  }
+
+  .review-card {
+    @apply rounded-xl p-4;
+    background: linear-gradient(135deg, hsl(213, 45%, 18%) 0%, hsl(213, 40%, 15%) 100%);
+    border: 1px solid hsl(213, 30%, 25%);
+  }
+
+  .feature-card {
+    background: linear-gradient(180deg, hsl(213, 40%, 14%) 0%, hsl(213, 40%, 10%) 100%);
+    border: 1px solid hsl(213, 30%, 25%);
+  }
+
+  .feature-card-light {
+    @apply bg-card rounded-xl overflow-hidden;
+    box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.08);
+  }
+
+  .text-gradient-teal {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(186, 100%, 50%) 0%, hsl(186, 100%, 60%) 100%);
+  }
+
+  .text-gradient-coral {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(16, 100%, 55%) 0%, hsl(16, 100%, 65%) 100%);
+  }
+
+  .text-gradient-yellow {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(45, 100%, 50%) 0%, hsl(45, 100%, 60%) 100%);
+  }
+
+  .nav-link {
+    @apply text-sm font-medium text-foreground/80 transition-colors duration-200 hover:text-foreground;
+  }
+
+  .hero-gradient-bg {
+    background: radial-gradient(ellipse at top, hsl(213, 40%, 18%) 0%, hsl(213, 45%, 10%) 50%, hsl(213, 50%, 6%) 100%);
+  }
+
+  .section-dark {
+    background: linear-gradient(180deg, hsl(213, 45%, 10%) 0%, hsl(213, 50%, 8%) 100%);
+  }
+
+  .section-darker {
+    background: hsl(213, 50%, 6%);
+  }
+
+  /* Auto-scroll animation */
+  @keyframes scroll-up {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-50%);
+    }
+  }
+
+  .auto-scroll {
+    animation: scroll-up 20s linear infinite;
+  }
+
+  .auto-scroll:hover {
+    animation-play-state: paused;
+  }
+
+  /* Pulse for countdown */
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px -5px hsla(186, 100%, 50%, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 30px -5px hsla(186, 100%, 50%, 0.6);
+    }
+  }
+
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  /* Typing animation for chat */
+  @keyframes typing {
+    0%, 60%, 100% {
+      opacity: 0.3;
+    }
+    30% {
+      opacity: 1;
+    }
+  }
+
+  .typing-dot {
+    animation: typing 1.4s infinite;
+  }
+
+  .typing-dot:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .typing-dot:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(213, 40%, 12%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(213, 30%, 30%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(213, 30%, 40%);
+}
+
+.light-theme ::-webkit-scrollbar-track {
+  background: hsl(210, 20%, 96%);
+}
+
+.light-theme ::-webkit-scrollbar-thumb {
+  background: hsl(214, 32%, 80%);
 }
