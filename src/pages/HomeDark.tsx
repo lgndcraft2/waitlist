@@ -7,8 +7,8 @@ import HeroSectionDark from '../components/HeroSectionDark';
 // import CTASectionDark from '@/components/CTASectionDark';
 // import FooterDark from '@/components/FooterDark';
 import WaitlistModal from '../components/WaitlistModal';
-import SponsorModal from '@/components/SponsorModal';
-import SuccessModal from '@/components/SuccessModal';
+import SponsorModal from '../components/SponsorModal';
+import SuccessModal from '../components/SuccessModal';
 
 const HomeDark = () => {
   const [isWaitlistOpen, setIsWaitlistOpen] = useState(false);
