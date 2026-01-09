@@ -12,7 +12,7 @@ interface WaitlistModalProps {
   variant?: 'dark' | 'light';
 }
 
-const WaitlistModal = ({ isOpen, onClose, onSuccess, variant = 'dark' }: WaitlistModalProps) => {
+const WaitlistModal = ({ isOpen, onClose, variant = 'dark' }: WaitlistModalProps) => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
