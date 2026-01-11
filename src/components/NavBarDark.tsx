@@ -20,7 +20,7 @@ const NavbarDark = ({ onChatClick, onJoinWaitlistClick }: NavbarDarkProps) => {
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/80 backdrop-blur-lg">
-      <div className="container mx-auto px-4">
+      <div className="mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo
           <a href="/" className="flex items-center gap-2">
@@ -31,8 +31,8 @@ const NavbarDark = ({ onChatClick, onJoinWaitlistClick }: NavbarDarkProps) => {
               WDC<span className="font-normal text-muted-foreground">Labs</span>
             </span>
           </a> */}
-          <div className="max-w-7xl ml-[100px]">
-              <a href="/" className="inline-block">
+          <div className="max-w-7xl justify-left md:ml-20 sm:ml-5">
+              <a href="/" className="flex items-left">
                 <img src={wdcLogo} alt="WDC Labs" className="h-[50px] w-[120px] sm:h-[55px] sm:w-[200px]" />
               </a>
           </div>
@@ -52,7 +52,7 @@ const NavbarDark = ({ onChatClick, onJoinWaitlistClick }: NavbarDarkProps) => {
           </div>
 
           {/* CTA Button */}
-          <div className="hidden md:block">
+          <div className="hidden md:block mr-20">
             <Button 
               onClick={onJoinWaitlistClick}
               className="btn-primary-gradient text-primary-foreground px-6"
